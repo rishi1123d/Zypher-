@@ -37,7 +37,17 @@ pnpm install --legacy-peer-deps
 
 The `--legacy-peer-deps` flag is required to handle dependency conflicts.
 
-### 3. Run the development server
+### 3. Configure Environment Variables
+
+Create a `.env.local` file in the root directory with the following content:
+
+```
+NEXT_PUBLIC_PRIVY_APP_ID=your-privy-app-id
+```
+
+You can get your Privy App ID by signing up at [privy.io](https://privy.io) and creating a new application.
+
+### 4. Run the development server
 
 ```bash
 npm run dev
@@ -55,9 +65,20 @@ or
 pnpm dev
 ```
 
-### 4. View the application
+### 5. View the application
 
 Open your browser and navigate to [http://localhost:3000](http://localhost:3000)
+
+## Authentication
+
+This project uses Privy for authentication, which provides:
+
+- Email/social login
+- Wallet connections (Ethereum, Solana, etc.)
+- Embedded wallets
+- Multi-factor authentication
+
+To customize the authentication experience, modify the `app/providers/PrivyProvider.tsx` file.
 
 ## Build for Production
 
@@ -74,6 +95,7 @@ npm start
 - React
 - Tailwind CSS
 - Shadcn UI
+- Privy Authentication
 
 ## License
 
