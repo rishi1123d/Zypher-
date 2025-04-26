@@ -15,6 +15,7 @@ import {
 } from "@/components/ui/navigation-menu"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
 import { Menu } from "lucide-react"
+import AuthButton from "@/components/auth-button"
 
 export default function Navbar() {
   const pathname = usePathname()
@@ -95,12 +96,7 @@ export default function Navbar() {
         </div>
 
         <div className="hidden md:flex md:items-center md:space-x-4 md:ml-auto">
-          <Button variant="outline" size="sm">
-            Sign In
-          </Button>
-          <Button size="sm" className="bg-gradient-to-r from-blue-600 to-purple-600">
-            Connect Wallet
-          </Button>
+          <AuthButton />
         </div>
 
         <div className="flex md:hidden ml-auto">
@@ -142,7 +138,7 @@ export default function Navbar() {
                   Documentation
                 </Link>
                 <div className="pt-4 mt-4 border-t border-border">
-                  <Button className="w-full bg-gradient-to-r from-blue-600 to-purple-600">Connect Wallet</Button>
+                  <AuthButton />
                 </div>
               </div>
             </SheetContent>
